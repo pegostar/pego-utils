@@ -44,6 +44,7 @@ Object.defineProperties(String.prototype, {
             return result;
         }
     },
+
     /**
      * Remove left space in the string
      * @example <caption>Example usage of LeftTrim.</caption>
@@ -63,6 +64,7 @@ Object.defineProperties(String.prototype, {
             return value.replace(/^\s+/g, '');
         }
     },
+
     /**
      * Remove right space in the string
      * @example <caption>Example usage of RightTrim.</caption>
@@ -82,6 +84,7 @@ Object.defineProperties(String.prototype, {
             return value.replace(/\s+$/g, '');
         }
     },
+
     /**
      * Remove start and end space in the string
      * @example <caption>Example usage of Trim.</caption>
@@ -102,6 +105,7 @@ Object.defineProperties(String.prototype, {
             return value.replace(/^\s+|\s+$/g, '');
         }
     },
+
     /**
      * Remove all space inside the string
      * @example <caption>Example usage of ClearAllSpaces.</caption>
@@ -121,6 +125,7 @@ Object.defineProperties(String.prototype, {
             return this.toString().replace(/ /g, '');
         }
     },
+
     /**
      * Convert string boolean in type boolean
      * @example <caption>Example usage of ToBoolean.</caption>
@@ -152,6 +157,7 @@ Object.defineProperties(String.prototype, {
             return Boolean(value);
         }
     },
+
     /**
      * Convert tag html in literal form
      * @example <caption>Example usage of EscapeHtml.</caption>
@@ -182,6 +188,7 @@ Object.defineProperties(String.prototype, {
             });
         }
     },
+
     /**
      * Convert literal form in tag html
      * @example <caption>Example usage of UnescapeHtml.</caption>
@@ -209,6 +216,7 @@ Object.defineProperties(String.prototype, {
                 .replace(/&amp;/g, '&');
         }
     },
+
     /**
      * Escape char ' inside string
      * @example <caption>Example usage of EscapeQuot.</caption>
@@ -229,6 +237,7 @@ Object.defineProperties(String.prototype, {
             return value.replace(/'/g, "\\\'");
         }
     },
+
     /**
      * Remove all html tags
      * @example <caption>Example usage of RemoveHtmlTags.</caption>
@@ -250,7 +259,9 @@ Object.defineProperties(String.prototype, {
         }
     }
 });
+
 String.Empty = '';
+
 /**
  * Check if string is null or empty
  * @example <caption>Example usage of String.IsNullOrEmpty.</caption>
@@ -302,6 +313,7 @@ Object.defineProperties(Array.prototype, {
             return this;
         }
     },
+
     /**
      * Insert element from position i
      * @example <caption>Example usage.</caption>
@@ -323,6 +335,7 @@ Object.defineProperties(Array.prototype, {
             return this;
         }
     },
+
     /**
      * Remove element from position i
      * @example <caption>Example usage.</caption>
@@ -346,6 +359,7 @@ Object.defineProperties(Array.prototype, {
             return this;
         }
     },
+
     /**
      * Reverse all items
      * @example <caption>Example usage.</caption>
@@ -365,6 +379,7 @@ Object.defineProperties(Array.prototype, {
             return this.slice(0).reverse();
         }
     },
+
     /**
      * Perform sort by property
      * @example <caption>Example usage.</caption>
@@ -397,6 +412,7 @@ Object.defineProperties(Array.prototype, {
             });
         }
     },
+
     /**
      * Remove duplicate inside array
      * @example <caption>Example usage.</caption>
@@ -570,6 +586,7 @@ var Utility = function() {
             SetConsoleLevel: function (level) {
                 currentLogLevel = level;
             },
+
             /**
              * Write the error log
              * @param {string} message - Message to write
@@ -579,6 +596,7 @@ var Utility = function() {
                     console.error(message);
                 }
             },
+
             /**
              * Write the warning log
              * @param {string} message - Message to write
@@ -588,6 +606,7 @@ var Utility = function() {
                     console.warn(message);
                 }
             },
+
             /**
              * Write the information log
              * @param {string} message - Message to write
@@ -669,6 +688,7 @@ var Utility = function() {
                     }
                     return result;
                 },
+
             /**
              * Recovers a element in mode synchronous
              * @param {string} key - Key to recover element
@@ -686,6 +706,7 @@ var Utility = function() {
 
                     return result;
                 },
+
             /**
              * Insert element in mode asynchronous
              * @param {string} key - Key to add
@@ -739,11 +760,12 @@ var Utility = function() {
                     }
                 }
             },
+
             /**
              * Recover a element in mode asynchronous
              * @example <caption>Example usage of GetItemAsync.</caption>
              *
-             * var test = Utility2.LocalStorage.GetItemAsync("pego");
+             * var test = Utility.LocalStorage.GetItemAsync("pego");
              * test.then(function (data){
              *  ...
              * }).catch(function (error){
@@ -790,8 +812,7 @@ var Utility = function() {
                     }
                 }
             }
-
-            };
+        };
     })();
 
     var ValidatorsInstance = (function () {
@@ -806,6 +827,7 @@ var Utility = function() {
 
                 return re.test(value);
             },
+
             /**
              * Perform check is valid password
              * @param {string} value - Element to check
@@ -824,6 +846,7 @@ var Utility = function() {
 
                 return re.test(value);
             },
+
             /**
              * Perform check is valid mail
              * @param {string} value - Element to check
@@ -858,6 +881,7 @@ var Utility = function() {
 
                 return (byte / dim).toFixed(2) + ext;
             },
+
             /**
              * Get only extension of the file
              * @param {string} filename - Complete file name any path
@@ -866,6 +890,7 @@ var Utility = function() {
             GetExtension: function (filename) {
                 return /.+\.([a-zA-Z]{2,6})$/.test(filename) ? (RegExp.$1).toLowerCase() : "undefined";
             },
+
             /**
              * Get type extension of the file
              * @param {string} filename - Complete file name any path
@@ -983,6 +1008,7 @@ var Utility = function() {
                 var domain = "path=/";
                 document.cookie = cname + "=" + cvalue + "; " + expires + "; " + domain;
             },
+
             /**
              * Get cookie element
              * @param {string} cname - Name of the key
